@@ -1,3 +1,7 @@
+{{ if not (isset .Params "src") }}
+  {{ errof "src parameter is required" }}
+{{ end }}
+
 {{ $fileName := .Get "src" }}
 {{ $file := path.Join .Page.Dir $fileName }}
 
