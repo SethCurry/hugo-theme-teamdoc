@@ -1,0 +1,4 @@
+{{ $fileName := .Get "file" }}
+{{ $file := path.Join .Page.Dir $fileName | readFile }}
+{{ $lang := .Get "lang" }}
+{{ (print "```" $lang "\n" $file "\n```") | markdownify }}
