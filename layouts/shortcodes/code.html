@@ -1,4 +1,10 @@
-{{ $fileName := .Get "file" }}
-{{ $file := path.Join .Page.Dir $fileName | readFile }}
+{{ $fileName := .Get "src" }}
+{{ $file := path.Join .Page.Dir $fileName }}
+
+{{ if not (fileExists $file) }}
+  {{ errorf "file does not exist: %s" $file }}
+{{ end }}
+
+{{ $content := readFile $file }}
 {{ $lang := .Get "lang" }}
-{{ (print "```" $lang "\n" $file "\n```") | markdownify }}
+{{ (print "```" $lang "\n" $content "\n```") | markdownify }}
