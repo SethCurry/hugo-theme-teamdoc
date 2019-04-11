@@ -1,5 +1,5 @@
 {{ if not (isset .Params "src") }}
-  {{ errof "src parameter is required" }}
+  {{ errorf "src parameter is required" }}
 {{ end }}
 
 {{ $fileName := .Get "src" }}
