@@ -1,0 +1,4 @@
+{{ $appName := .Get 0 }}
+{{ $app := index .Site.Data.applications $appName }}
+{{ $appIcon := default "fa-cubes" $team.icon }}
+<span class="application"><a href='{{ printf "%s/applications/%s/" .Site.BaseURL $appName }}'><span class="fa {{ $appIcon }}" aria-hidden="true"></span>{{ $app.name }}</a></span>

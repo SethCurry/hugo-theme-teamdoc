@@ -1,0 +1,5 @@
+{{ $teamName := .Get 0 }}
+{{ $team := index .Site.Data.teams $teamName }}
+{{ $teamFile := printf "/teams/%s.md" $teamName }}
+{{ $teamIcon := default "fa-user" $team.icon }}
+<span class="team"><a href='{{ printf "%s/teams/%s/" .Site.BaseURL $teamName }}'><span class="fa {{ $teamIcon }}" aria-hidden="true"></span>{{ $team.name }}</a></span>
