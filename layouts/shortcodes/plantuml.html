@@ -1,0 +1,5 @@
+<a href="{{.Site.BaseURL}}{{.Page.File.Dir}}/{{.Get 0}}.png" sdata-lightbox="{{.Get 0}}.png">
+	<img src="{{.Site.BaseURL}}{{.Page.File.Dir}}/{{.Get 0}}.png" style="border:0px" {{ with .Get "width"}} width="{{.}}"{{ end }} {{ with .Get "align"}} align="{{.}}"{{ end }}/>
+</a> 
+{{.Inner}}
+
